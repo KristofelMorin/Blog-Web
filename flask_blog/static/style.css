@@ -1,0 +1,12 @@
+/* flask_blog/static/style.css */
+.card {
+    margin: 0.25rem;
+}
+
+.blog-body {
+    padding: 1.25em;
+}
+
+* {
+    font-family: 'Open+Sans', cursive;
+}

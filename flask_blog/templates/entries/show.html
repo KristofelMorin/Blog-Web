@@ -1,0 +1,23 @@
+<!--flask_blog/templates/entries/show.html-->
+
+{% extends "layout.html" %}
+{% block body %}
+<h2>{{ entry.title }}</h2>
+<br> {{ entry.text|safe }} <!-- safe is used to render HTML -->
+
+<br><br>
+Posted at {{entry.created_at}}
+
+<br><br>
+
+<div class="btn-group">
+    <form action="{{ url_for('entry.edit_entry', id=entry.id)}}" method="GET">
+        <button type="submit" class="btn btn-secondary">Edit</button>
+    </form>
+
+    <form action="{{ url_for('entry.delete_entry', id=entry.id) }}" method="post">
+        <button type="submit" class="btn btn-danger" style="margin-left: 5px;">Delete</button>
+    </form>
+</div>
+
+{% endblock  %}
